@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced Profanity Filter</title>
+  <link rel="stylesheet" type="text/css" href="options.css" />
+</head>
+
+<body>
+  <h1>Advanced Profanity Filter</h1>
+  <div id="profanityButton">
+    <button id="toggleProfanity">Modify Profanity List</button>
+    <div id="listWarning" class="notes">Warning: Offensive Language</div>
+  </div>
+
+  <div id="profanityList" style="display: none;">
+    <div class="notes">Comma separated values with no spaces</div>
+    <textarea id="wordList" cols="40" rows="10"></textarea>
+    <button id="save">Save List</button>
+  </div>
+
+  <div id="options">
+    <label>
+      <input type="checkbox" id="preserveFirst">
+      Preserve the first letter
+    </label>
+    <div class="examples">Example: If "Dog" is filtered, then it is displayed as "D**"</div>
+
+    <label>
+      <input type="checkbox" id="filterSubstring">
+      Filter parts of words
+    </label>
+    <div class="examples">Example: If "Dog" is filtered, then "Doghouse" is displayed as "***house"</div>
+
+    <label>
+      <input type="checkbox" id="showCounter">
+      Show number of filtered words
+    </label>
+    <div class="examples">Number of filtered words will be shown over the extension icon</div>
+  </div>
+
+  <div id="status"></div>
+
+  <button id="default">Restore Defaults</button>
+  <span id="contributors">
+    Created By <a href="mailto:richard@richardfrost.info?Subject=Advanced%20Profanity%20Filter">Richard Frost</a>
+    <br>
+    Based off of markyd13's Simple Profanity Filter
+  </span>
+
+  <script src="options.js"></script>
+</body>
+</html>

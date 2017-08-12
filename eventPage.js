@@ -1,5 +1,5 @@
 // Open options page if extension icon is clicked
-chrome.browserAction.onClicked.addListener(function() {chrome.runtime.openOptionsPage();});
+// chrome.browserAction.onClicked.addListener(function() { chrome.runtime.openOptionsPage();} );
 
 // Actions for extension install or upgrade
 chrome.runtime.onInstalled.addListener(function(details){
@@ -11,9 +11,12 @@ chrome.runtime.onInstalled.addListener(function(details){
   }
 });
 
-// Show badge with number of words filtered
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    chrome.browserAction.setBadgeText({text: request.counter, tabId: sender.tab.id});
+    // Show badge with number of words filtered
+    if (request.counter !== null) {
+      chrome.browserAction.setBadgeText({text: request.counter, tabId: sender.tab.id});
+      console.log(request);
+    }
   }
 );

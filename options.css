@@ -33,7 +33,7 @@ label input[type=checkbox]{
   padding-bottom: 5px;
   padding-left: 20px;
   font-size: 10px;
-  color: gray; 
+  color: gray;
 }
 
 #options {
@@ -62,4 +62,8 @@ label input[type=checkbox]{
   line-height: 14px;
   display: inline;
   color: gray;
+}
+
+body {
+  width: 450px;
 }
